@@ -1,9 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Hola Cloudflare</title>
+  <meta charset="UTF-8">
+  <title>Cloudflare funcionando</title>
 </head>
 <body>
-  <h1>Mi primera web en Cloudflare 🚀</h1>
+
+  <h1>Cloudflare Pages + Workers 🚀</h1>
+
+  <button onclick="llamarAPI()">Probar backend</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    async function llamarAPI() {
+      const res = await fetch("https://TU_WORKER_URL");
+      const data = await res.text();
+      document.getElementById("resultado").innerText = data;
+    }
+  </script>
+
 </body>
 </html>
